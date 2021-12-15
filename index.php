@@ -19,7 +19,7 @@ if (isset($json_invoices_list)) {
   }
 }  
 
-$Obj_invoice->xlsx_to_csv();
+//$Obj_invoice->xlsx_to_csv();
 
 
 
