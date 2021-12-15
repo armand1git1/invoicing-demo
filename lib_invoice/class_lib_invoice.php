@@ -5,11 +5,30 @@ Copyrigt Armand Thierry Djappi
 
 //This class below contains list of functions to fetch and parse data for invoice 
 
-use Curl\Curl;
-use \PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+//use Curl\Curl;
+
+/*
+include_once('BasicExcel/AbstractReader.php');
+require_once('BasicExcel/Reader/Xls.php');
+require_once('BasicExcel/Reader.php');
+\BasicExcel\Reader::registerAutoloader();
+*/
+//use \PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+//use \PhpOffice\PhpSpreadsheet\Writer\Csv;
+//require_once("BasicExcel");
+
+require 'vendor/autoload.php';
+
+//use \PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+//use \PhpOffice\PhpSpreadsheet\Writer\Csv;
+//use PhpOffice\PhpSpreadsheet\Spreadsheet;
+//use PhpOffice\PhpSpreadsheet\src\PhpSpreadsheet\Spreadsheet;
+//use PhpOffice\PhpSpreadsheet\src\PhpSpreadsheet\Writer\Xlsx;
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+//use \PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 use \PhpOffice\PhpSpreadsheet\Writer\Csv;
-
-
 
 class  class_lib_invoiceclass  
 {
@@ -63,10 +82,13 @@ function get_array_xml($file)
 
 function xlsx_to_csv() {
   
+
+
 //$xls_file = "Example.xlsx";
 
-$xls_file = "https://ﬁle.ﬁnanssiala.ﬁ/ﬁnvoice/Finvoice_def_3_0.xls";
+//$xls_file = "https://ﬁle.ﬁnanssiala.ﬁ/ﬁnvoice/Finvoice_def_3_0.xls";
 
+/*
 $reader = new Xlsx();
 $spreadsheet = $reader->load($xls_file);
 
@@ -78,9 +100,50 @@ $writer = new Csv($spreadsheet);
     $writer->setSheetIndex($sheetIndex);
     $writer->save($loadedSheetName.'.csv');
  }
+ */
+ //$xls_file = "F:/jobs/2021/November/Academic work/Suomen Kasvurahoitus Oy/Finvoice_def_3_0.xls";
+
+ 
+//$spreadsheet = new Spreadsheet();
+/*
+$sheet = $spreadsheet->getActiveSheet();
+$sheet->setCellValue('A1', 'Hello World !');
+
+$writer = new Xlsx($spreadsheet);
+$writer->save('hello world.xlsx');
+die();
+*/
+
+ 
+ $xls_file = "Finvoice_def_3_0.xls";
+ //$spreadsheet = n \PhpOffice\PhpSpreadsheet\IOFactory::load($xls_file);
+ //$reader = new Xlsx();
+ //$reader = new Xlsx($spreadsheet);
+ $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile($xls_file);
+ $reader->setReadDataOnly(true);
+ $spreadsheet = $reader->load($xls_file);
+
+ $loadedSheetNames = $spreadsheet->getSheetNames();
+
+ $writer = new Csv($spreadsheet);
+
+  foreach($loadedSheetNames as $sheetIndex => $loadedSheetName) {
+    $writer->setSheetIndex($sheetIndex);
+    $writer->save($loadedSheetName.'.csv');
+  } 
+ /*
+  try {
+  //$new_reader = new Reader();   
+	$xmldata = \BasicExcel\Reader::readFile($xls_file); //or abc.xls or abc.xlsx
+  //$xmldata = $new_reader->readFile($xls_file); //or abc.xls or abc.xlsx
+    echo '<pre>' . print_r($xmldata->toArray() , 1) . '</pre>';
+   }catch(Exception $e){
+	echo $e->getMessage();
+	exit;
+   } */
 }
 
-
+/*
 function CallAPI_Curl($method, $token, $url, $data = [])
 {
   
@@ -88,13 +151,13 @@ function CallAPI_Curl($method, $token, $url, $data = [])
   
     $curl->setHeader('Content-Type', 'application/json');
     
-    /*
+    
     if($token != "") {
       $login_password=explode(":", base64_decode($token));
       if (isset($login_password) && is_array($login_password)) {
         $curl->setBasicAuthentication($login_password[0], $login_password[1]);
       }      
-    } */
+    } 
 
     switch ($method)
     {
@@ -114,6 +177,7 @@ function CallAPI_Curl($method, $token, $url, $data = [])
         return $curl->response;
     }
 }
+*/
 
 
 function CallAPI($method, $token, $url, $data = false)

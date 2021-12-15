@@ -1,2 +1,0 @@
-# invoicing-demo
-invoice-listing

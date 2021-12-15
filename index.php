@@ -10,9 +10,25 @@
 
 <?php 
 // for testing purpose 05.2021
-require __DIR__ . '/vendor/autoload.php';
+ //require __DIR__ . '/vendor/autoload.php';
 
-include_once("lib_invoice/class_lib_invoice.php");
+
+//use phpoffice\phpspreadsheet\src\PhpSpreadsheet\Reader\Xlsx;
+//use phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Csv;
+
+/*
+require_once('BasicExcel/Reader/Xls.php');
+require_once('BasicExcel/Writer/Xls.php');
+
+require_once('BasicExcel/Reader.php');
+\BasicExcel\Reader::registerAutoloader();
+*/
+//require_once('BasicExcel/AbstractReader.php');
+
+
+
+
+require_once("lib_invoice/class_lib_invoice.php");
 $Obj_invoice        =   new class_lib_invoiceclass();
 $json_invoices_list =   json_decode('{  "invoices": [    {      "id": "559b966f-aceb-4534-ff0d-08d9031f90c6",      "url": "https://assets.ctfassets.net/bt30rfipzm8p/49tNP2w8WX5m3eAUuubwZY/ 5338d47d9d68cff35173dc13f5c38640/invoice-example-1.xml"    },    {      "id": "5c07a71d-e6ea-4340-fc3a-08d8f201ca19",      "url": "https://assets.ctfassets.net/bt30rfipzm8p/76v3SvRAKGTuc9r2UXHV3U/ 28bce8941821f0454f213e53d496fbae/invoice-example-2.xml"    },    {      "id": "c5ffa4e4-2f28-48c2-fc35-08d8f201ca19",      "url": "https://assets.ctfassets.net/bt30rfipzm8p/3a6wRJXNFhlpkL5nDAVat7/ b103ba3bfa3635d6be186100cbcb1fdb/invoice-example-3.xml"    }  ] }');
 //print_r($json_invoices_list); 
@@ -23,7 +39,7 @@ if (isset($json_invoices_list)) {
       //echo $list_invoice->id; echo "=="; echo $list_invoice->url;  echo "<br />";
 
       //$invoices_details   = $Obj_invoice->CallAPI("GET",$list_invoice->id, $list_invoice->url);
-      $invoices_details   = $Obj_invoice->CallAPI_Curl("GET",$list_invoice->id, $list_invoice->url);
+      $invoices_details   = $Obj_invoice->CallAPI("GET",$list_invoice->id, $list_invoice->url);
       
       //print_r($invoices_details); 
      // die();
