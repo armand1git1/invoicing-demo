@@ -1,0 +1,169 @@
+body    {                          /* define the body of my page  */
+  font-family: Verdana;
+  margin-top:10px;
+  margin-bottom: 10px;
+  background-color: #ECF1EF;
+        }                          /* les textes sont noirs */
+
+.div1   {                          /* define the body of my page  */  
+  font-family: Verdana;  
+  border:solid 2px  #104E8B;
+  background-color: #F0F8FF;       /* Color for wedding : le rose #FFCCCC; */    
+  background-image: url('../lss_images/lss_images_home/empty.jpg');  
+  border-radius: 10px; 
+  /* declaration for WebKit browsers like: Safari, Chrome */
+  -webkit-border-radius: 10px; 
+  /* declaration for Mozilla browsers like FireFox */
+  -moz-border-radius: 10px; 
+  /* Linux browsers */
+  -khtml-border-radius: 10px;
+  /* maybe ALL IE */
+  behavior: url(lss_css/border-radius.htc);
+        }                          /* les textes sont noirs */		
+
+.div2   {                          /* define the body of my page  */  
+  font-family: Verdana;
+  border:solid 2px  #104E8B;
+  background-color: #F0F8FF;       /* Color for wedding : the blue sky */ 
+  border-radius: 10px;   
+  -webkit-border-radius: 10px; 
+  -moz-border-radius: 10px;  
+  -khtml-border-radius: 10px;
+  behavior: url(../lss_css/border-radius.htc);
+        }       
+		 
+.border {
+  font-family : Verdana;
+  border      :solid 2px;
+  border-color: #104E8B;           /* Color blue for border*/
+        }
+ 
+.fieldset_index 
+        {
+	border:1px solid #104E8B; 
+	border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px;
+	}
+.legend_index 
+        {
+        padding: 0.2em 0.5em;
+  	border:1px solid #104E8B;
+	color:#000000;
+	font-size:90%;
+	text-align:left;
+	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px;
+        }
+.button 
+	{
+	font-family     :Georgia, "Times New Roman", Times, serif;
+	font-size       :11pt;
+	border          :3; 
+	background-color:#F8F8FF;    
+	}
+
+#container
+        {
+        height:30px;
+        valign:top; 
+        width: 78%;
+        margin-left: auto; 
+        margin-right: auto;       
+        }
+
+#containerpage
+        {
+        height:450px;
+        valign:middle;
+        width: 78%;
+        margin-left : auto; 
+        margin-right: auto;        
+        }
+
+#containerclose
+        {
+        height:30px;
+        valign:middle;      
+        margin-left : auto; 
+        margin-right: auto;  
+        background-color: #ECF1EF;
+        width: 78%;             
+        }
+
+#containerfooter
+        {
+        height:22px;
+        valign:middle;
+        width: 78%;
+        margin-left : auto; 
+        margin-right: auto;        
+        }
+
+.spanspace
+         {
+         height:5px;
+         valign:middle;
+         width: 78%; 
+         }
+
+.menu1  {                          /* MENU CONTAINER */
+  border-bottom:solid 2px  ;  /* Create a black line under menu */
+  border-color: #104E8B;       /* Color for wedding : le rose #FFCCCC;*/
+  padding-top:12px ;               /* high interior space */
+  padding-bottom:3px
+        }                          /* low interior space */
+
+.a
+        {
+        color :#000000;
+	font-size:12px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+        text-decoration: underline;
+        }
+
+.smalltext
+        {
+        color:#000000;
+        font-size:10px;
+        font-family:Georgia, "Times New Roman", Times, serif;
+        margin-left: auto; 
+        margin-right: auto;
+        }
+
+.normaltext
+        {        
+        font-size:13px;
+        font-family:Georgia, "Times New Roman", Times, serif;
+        margin-left: auto; 
+        margin-right: auto;
+        }
+		
+.normalsubsubtitle
+        {
+        color:#000000;
+        font-size:23px;
+        font-family:Georgia, "Times New Roman", Times, serif;
+        margin-left: auto; 
+        margin-right: auto;
+        }
+
+.smallsubsubtitle
+        {
+        color:#000000;
+        font-size:20px;
+        font-family:Georgia, "Times New Roman", Times, serif;
+        margin-left: auto; 
+        margin-right: auto;
+        }
+
+.smallsubsubtitlealert
+        {
+        color:#FF0000;
+        font-size:25px;
+        font-family:Georgia, "Times New Roman", Times, serif;
+        margin-left: auto; 
+        margin-right: auto;
+        }
