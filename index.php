@@ -50,7 +50,7 @@ if (isset($json_invoices_list)) {
 
 
  <form method="get" name="api_form">
- <div id="containerpage" class=" menu1 div2" >
+ <div  class=" menu1 div2" >
  <table>
   <tr>
    <td colspan="4"><span class="smallsubsubtitlealert"></span>&nbsp;
