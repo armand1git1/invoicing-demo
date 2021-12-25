@@ -2,9 +2,21 @@
 We have written a small Libraries for the demo : \lib_invoice\class_lib_invoice.php
 
 
+Part 1 : 
 1- Parsing json received from  pdf : Via curl   function :  function CallAPI($method, $token, $url, $data = false)
    Result : the api call return : 404 (unauthorized ).
+   22.12.2021 : the issues has been fixed and the xml is received after a call 
 
+1.1  : Result is transformed via simplexml_load_string
+
+1.2  : The content of the xml is converted into a simple Array from get_arrayfrom_xml($xml_data)    
+
+1.3  : finally the result is displayed 
+
+Others : We create the folder test : to use efficientlt php Debug features from Visual Studio Code
+
+
+Part 2 : In case we download the xml in our computer
 Because of the unauthorization we decide to download the xls file :  
    Schema deﬁnition: https://ﬁle.ﬁnanssiala.ﬁ/ﬁnvoice/Finvoice3.0.xsd Data list:    https://ﬁle.ﬁnanssiala.ﬁ/ﬁnvoice/Finvoice_def_3_0.xls
    After that we have to convert xls into xml so that data could be easily manipulated.

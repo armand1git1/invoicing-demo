@@ -16,22 +16,14 @@ if (isset($json_invoices_list)) {
   if (isset($json_invoices_list->invoices) && count($json_invoices_list->invoices)>0) { 
     $i=0;
     foreach ($json_invoices_list->invoices as $list_invoice) 
-    {           
-      /*
-      $invoices_details[$i]   =  $Obj_invoice->CallAPI("GET",$list_invoice->id, $list_invoice->url);
-      print_r(simplexml_load_string($Obj_invoice->CallAPI("GET",$list_invoice->id, $list_invoice->url)));
-      die();
-      */
+    {          
+      // put the content of the call into an array (content has xml definition)  
       $invoices_details[$i]   = simplexml_load_string($Obj_invoice->CallAPI("GET",$list_invoice->id, $list_invoice->url));    
       $i++;  
     }
   }
 }  
-$arr_invoices_detail    = $Obj_invoice->get_arrayfrom_xml($invoices_details); 
-
-//$Obj_invoice->xlsx_to_csv();
-
-
+$arr_invoices_detail    = $Obj_invoice->get_arrayfrom_xml($invoices_details);  // get a simple Array from xml
 
 ?>
 
@@ -56,12 +48,7 @@ $arr_invoices_detail    = $Obj_invoice->get_arrayfrom_xml($invoices_details);
 
 
  <form method="get" name="api_form">
- <?php 
- //print_r($invoices_details);
  
- // print_r($invoices_details);
-  //die();
-  ?>
  <div  class=" menu1 div2">
  <table>
   <tr>

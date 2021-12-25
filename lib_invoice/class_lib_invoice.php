@@ -4,17 +4,22 @@ Copyrigt Armand Thierry Djappi
 */
 
 
+/*
+Those libraries Are called in the case we have an xml file to treat since in the first try the Api called returned 404
+*/
 require 'vendor/autoload.php'; // libraries for manipulating xls, csv, pdf file in php
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use \PhpOffice\PhpSpreadsheet\Writer\Csv;
 
+
 class  class_lib_invoiceclass  
 {
 
 
- // Call function to get data from api 
+ // Call function to get data from api Call 
+ // it return xml data or infos regarding the error
  function CallAPI($method, $token, $url, $data = false)
  {
     $curl = curl_init();  
