@@ -13,7 +13,7 @@ Part 1 :
 
 1.3  : finally the result is displayed 
 
-Others : We create the folder test : to use efficientlt php Debug features from Visual Studio Code
+Others : We create the folder test : to use efficiently php Debug features from Visual Studio Code
 
 
 Part 2 : In case we download the xml in our computer
