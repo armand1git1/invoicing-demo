@@ -71,7 +71,7 @@ $arr_invoices_detail    = $Obj_invoice->get_arrayfrom_xml($invoices_details);  /
   <table align="center" width="300">
    <tr height="25">
     <td align="left" valign="top" colspan="1" nowrap="nowrap">Response code:</td>
-    <td valign="top" colspan="2" align="left"><strong> <?php if(isset($invoices_details[$i]["http_code"])) echo $invoices_details[$i]["http_code"];  ?></strong></td>                                                
+    <td valign="top" colspan="2" align="left"><strong> <?php if(isset($invoices_details[$i]["http_code"])) echo  $invoices_details[$i]["http_code"];  ?></strong></td>                                                
    </tr>
 
    <tr height="5">
@@ -128,12 +128,12 @@ $arr_invoices_detail    = $Obj_invoice->get_arrayfrom_xml($invoices_details);  /
       
    ?>
    <tr height="25"  style="<?php if (isset($style)) echo $style; ?>">
-    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerOrganisationUnitNumber"])) echo $arr_invoices_detail[$i]["BuyerOrganisationUnitNumber"];  ?></td>
-    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerOrganisationName"])) echo $arr_invoices_detail[$i]["BuyerOrganisationName"];  ?></td>
-    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerTownName"])) echo $arr_invoices_detail[$i]["BuyerTownName"];  ?></td>
-    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerPostCodeIdentiﬁer"])) echo $arr_invoices_detail[$i]["BuyerPostCodeIdentiﬁer"];  ?></td>
-    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["InvoiceTotalVatIncludedAmount"])) echo $arr_invoices_detail[$i]["InvoiceTotalVatIncludedAmount"];  ?></td>
-    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["InvoiceDueDate"])) echo$arr_invoices_detail[$i]["InvoiceDueDate"];  ?></td>
+    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerOrganisationUnitNumber"])) echo htmlspecialchars($arr_invoices_detail[$i]["BuyerOrganisationUnitNumber"]);  ?></td>
+    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerOrganisationName"])) echo htmlspecialchars($arr_invoices_detail[$i]["BuyerOrganisationName"]);  ?></td>
+    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerTownName"])) echo htmlspecialchars($arr_invoices_detail[$i]["BuyerTownName"]);  ?></td>
+    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["BuyerPostCodeIdentiﬁer"])) echo htmlspecialchars($arr_invoices_detail[$i]["BuyerPostCodeIdentiﬁer"]);  ?></td>
+    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["InvoiceTotalVatIncludedAmount"])) echo htmlspecialchars($arr_invoices_detail[$i]["InvoiceTotalVatIncludedAmount"]);  ?></td>
+    <td align="left" valign="top" colspan="1" nowrap="nowrap"><?php if(isset($arr_invoices_detail[$i]["InvoiceDueDate"])) echo htmlspecialchars($arr_invoices_detail[$i]["InvoiceDueDate"]);  ?></td>
     
    </tr>
    <?php
