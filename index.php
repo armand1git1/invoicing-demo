@@ -66,33 +66,33 @@ $arr_invoices_detail    = $Obj_invoice->get_arrayfrom_xml($invoices_details);  /
    for($i=0; $i<count($invoices_details); $i++) {   
  ?>
  <fieldset  class="fieldset_index">
-  <legend class="legend_index"><strong><?php if(isset($invoices_details[$i]["url"])) echo $invoices_details[$i]["url"]; ?></strong></legend>
+  <legend class="legend_index"><strong><?php if(isset($invoices_details[$i]["url"])) echo htmlspecialchars($invoices_details[$i]["url"]); ?></strong></legend>
  
   <table align="center" width="300">
    <tr height="25">
     <td align="left" valign="top" colspan="1" nowrap="nowrap">Response code:</td>
-    <td valign="top" colspan="2" align="left"><strong> <?php if(isset($invoices_details[$i]["http_code"])) echo  $invoices_details[$i]["http_code"];  ?></strong></td>                                                
+    <td valign="top" colspan="2" align="left"><strong> <?php if(isset($invoices_details[$i]["http_code"])) echo htmlspecialchars($invoices_details[$i]["http_code"]);  ?></strong></td>                                                
    </tr>
 
    <tr height="5">
     <td width="5" align="right" valign="top" colspan="1">Total time:</td>
-    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["total_time"])) echo $invoices_details[$i]["total_time"];  ?></td>                                                
+    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["total_time"])) echo htmlspecialchars($invoices_details[$i]["total_time"]);  ?></td>                                                
    </tr>   
 
    <tr height="5">
     <td width="5" align="right" valign="top" colspan="1">size download:</td>
-    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["size_download"])) echo $invoices_details[$i]["size_download"];  ?></td>                                                
+    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["size_download"])) echo ($invoices_details[$i]["size_download"]);  ?></td>                                                
    </tr> 
 
 
    <tr height="5">
     <td width="5" align="right" valign="top" colspan="1">Primary Ip:</td>
-    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["primary_ip"])) echo $invoices_details[$i]["primary_ip"];  ?></td>                                                
+    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["primary_ip"])) echo htmlspecialchars($invoices_details[$i]["primary_ip"]);  ?></td>                                                
    </tr> 
 
    <tr height="5">
     <td width="5" align="right" valign="top" colspan="1">size download:</td>
-    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["size_download"])) echo $invoices_details[$i]["size_download"];  ?></td>                                                
+    <td width="5" valign="top" colspan="2" align="left"><?php if(isset($invoices_details[$i]["size_download"])) echo htmlspecialchars($invoices_details[$i]["size_download"]);  ?></td>                                                
    </tr> 
    </table>    
  </fieldset>
